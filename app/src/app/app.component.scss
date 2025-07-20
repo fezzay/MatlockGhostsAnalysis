@@ -1,0 +1,10 @@
+main.content {
+    margin-top: 64px; /* height of navbar */
+    padding: 1rem;
+    transition: margin-left 0.3s ease;
+  }
+  
+  main.content.shifted {
+    margin-left: 240px; /* optional, if you want content shift */
+  }
+  

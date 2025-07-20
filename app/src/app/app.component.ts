@@ -1,14 +1,24 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterModule, NavbarComponent, SidebarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  sidebarOpened = false;
+
+  toggleSidebar() {
+    this.sidebarOpened = !this.sidebarOpened;
+  }
+
+  closeSidebar() {
+    this.sidebarOpened = false;
+  }
 }
